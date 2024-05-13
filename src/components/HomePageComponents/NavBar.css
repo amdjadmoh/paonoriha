@@ -16,12 +16,12 @@
     align-items: center;
     justify-content: space-between;
     text-transform: capitalize;
-    margin-right: 100px;
+    margin-right: 250px;
 }
 
 .navbar ul li {
     padding:15px 20px ;
-    color: white;
+    color: hsl(0, 0%, 40%);
     font-weight: 600;
     cursor: pointer;
 }
@@ -30,6 +30,11 @@
     border-bottom:2px solid #5169dd;
 }
 
-li.switch:hover{
-    border-bottom:none;
+.switch{
+    position: absolute;
+    right: 80px;
+}
+
+li.home{
+    color: #5169dd;
 }

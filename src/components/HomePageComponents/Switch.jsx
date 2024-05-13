@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Switch.css";
 
-function Switch() {
-  const [isLeft, setIsLeft] = useState(true);
-
-  const handleToggle = () => {
-    setIsLeft(!isLeft);
-  };
-
+function Switch({ logIn, sginUp, onLogInChange, onSignUpChange }) {
   return (
     <div className="form-box">
       <div className="button-box">
-        <div className={`btn ${isLeft ? "left" : "right"}`}></div>
-        <button onClick={handleToggle} className="toggle-btn">
+        <div className={`btn ${logIn ? "left" : "right"}`}></div>
+        <button
+          onClick={onLogInChange}
+          className={`toggle-btn ${logIn ? "login-left" : "login-right"}`}
+        >
           Log In
         </button>
-        <button onClick={handleToggle} className="toggle-btn">
+        <button
+          onClick={onSignUpChange}
+          className={`toggle-btn ${!sginUp ? "sginup-left" : "sginup-right"}`}
+        >
           Sign Up
         </button>
       </div>

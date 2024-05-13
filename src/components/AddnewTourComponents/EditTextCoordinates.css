@@ -18,6 +18,9 @@
   align-items: center;
 }
 
+.Size{
+  color: #000;
+}
 .location-delete,
 .edit-text-buttons,
 .width-edit,
@@ -89,6 +92,7 @@
   height: 20px;
   font-size: 14px;
   text-align: center;
+  color: black;
 }
 
 .x-coordinate button img,
@@ -101,6 +105,7 @@
 .counter {
   text-align: center;
   width: 40px;
+  color: black;
 }
 
 .location-delete button {
