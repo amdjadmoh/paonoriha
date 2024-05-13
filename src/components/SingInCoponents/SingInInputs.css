@@ -146,6 +146,7 @@ input.conferm:focus ~label.conferm ,
 input.conferm:valid ~label.conferm{
     transform: translate(-40px,-31px) scale(.89);
 }
+
 input[type="password"] {
     color: white;
 }
@@ -216,8 +217,8 @@ z-index: 100000;
     justify-content: center;
     position: absolute;
     bottom:  160px;
-    left: 60px;
-    width: 200px;
+    left: 40px;
+    width: 240px;
 }
 
 .accept-terms{

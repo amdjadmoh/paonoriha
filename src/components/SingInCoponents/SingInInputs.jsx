@@ -29,7 +29,7 @@ function SingInInputs() {
     <div className="input-singin">
       <form onSubmit={handleSubmit}>
         <div className="singin-title">
-          <h1>Sign Up</h1>
+          <h1 className="sginup">Sign Up</h1>
         </div>
         <div className="input-box">
           <input type="text" required className="user" name="name" />

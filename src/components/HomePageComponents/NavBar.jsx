@@ -14,6 +14,7 @@ function NavBar({
   onAboutChange,
   onTutorialsChange,
 }) {
+<<<<<<< HEAD
   const [user, setUser] = useState(false);
   function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -56,6 +57,10 @@ function NavBar({
     }
   }, []);
   return user === false ? (
+=======
+
+  return (
+>>>>>>> 25aacf335563cb06fc0e71c10b29b5c427c2e5e0
     <div className="navbar">
       <img src={logo} alt="Logo" />
       <nav>

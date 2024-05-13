@@ -1,0 +1,116 @@
+*{
+    font-family:Nunito, sans-serif;
+}
+
+.MakeYourTours{
+    display: inline-block;
+    position: relative;
+}
+
+.user-edit-info{
+    width: 45px;
+    height: 45px;
+    background-color: hsl(204, 70%, 53%);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid gray;
+    left: 240px;
+    bottom: -2px;
+    cursor: pointer;
+}
+
+.user-edit-info .user-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    height: 100px;
+    position: relative;
+}
+
+.user-profile{
+    width: 47px;
+    position: absolute;
+    top: -1.5px;
+    left: -1.5px;
+}
+
+.user-edit-info ul{
+    position: absolute;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+    overflow: hidden;
+    top: 48px;
+}
+
+
+.user-edit-info .user-img ul li{
+    font-size: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 79px;
+    height: 25px;
+    padding-left:4px;
+    gap: 7px;
+    color: hsl(0, 0%, 30%);
+    letter-spacing: 0.05px;
+    cursor: pointer;
+    background-color: gainsboro;
+    transition: .4s ease;
+}
+
+.user-edit-info .user-img ul li:hover{
+    background-color: hsl(0, 0%, 76%);
+}
+
+.myacaunt{
+border-bottom:1px solid transparent ;
+}
+
+li.myacaunt img{
+   width: 15px;
+}
+
+li.logout img{
+    width: 14px;
+}
+
+
+.logout{
+    
+    border-top:1px solid hsl(0, 0%, 80%) ;
+}
+
+.go-to-your-tour{
+    border: 2px solid gray;
+    padding:1.5px 2px;
+    border-radius: 70px;
+    transition: .4s ease;
+}
+
+.go-to-your-tour:hover{
+    border: 2px solid hsl(0, 0%, 70%);
+    transform: scale(1.05);
+}
+
+.go-to-your-tour button {
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    transition:  20s ease; /* Change the transition duration */
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+    cursor: pointer;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+
+.go-to-your-tour button:hover {
+    background: linear-gradient(270deg, #3498db, #9b59b6);
+}

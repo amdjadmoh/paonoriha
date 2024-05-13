@@ -7,16 +7,17 @@ import LogIn from "./components/LogIn";
 import LogInInput from "./components/LogInInput/LogInInput";
 import SignIn from "./components/SingIn";
 import HomePage from "./components/HomePage";
+<<<<<<< HEAD
 import ForgotPasswordInput from "./components/forgotPasswordInput/forgotPasswordInput";
 import ChangePassword from "./components/changePassword/changePassword";
-function App() {
+=======
+import MakeYourTours from "./components/HomePageComponents/MakeYourTours";
 
+>>>>>>> 25aacf335563cb06fc0e71c10b29b5c427c2e5e0
+function App() {
   return (
     <div>
-      
-        <HomePage
-         
-        />
+      <MakeYourTours />
     </div>
   );
 }
