@@ -14,7 +14,7 @@ function SingInInputs() {
     const data = Object.fromEntries(formData);
 
     try {
-      axios.post("http://192.168.23.48:5000/api/v1/users/signup", data, {
+      const response =await axios.post("http://localhost:5000/api/v1/users/signup", data, {
         withCredentials: true,
       });
 

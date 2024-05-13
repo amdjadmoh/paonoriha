@@ -21,7 +21,7 @@ function LogInInput() {
 
     try {
       const response = await axios.post(
-        "http://192.168.23.48:5000/api/v1/users/login",
+        "http://localhost:5000/api/v1/users/login",
         data,
         { withCredentials: true }
       );
@@ -33,7 +33,10 @@ function LogInInput() {
       console.error("Login error:", error);
     }
   };
-
+  const handleForgotPassword=()=>{
+        
+  }
+  
   return (
     <div className="input-login">
       <form onSubmit={handleSubmit}>
@@ -52,7 +55,7 @@ function LogInInput() {
           />
           <label className="password-login">Password</label>
           <img src={password} alt="" className="password-login" />
-          <span className="password-login">I forgot my password</span>
+          <span className="password-login" onClick={handleForgotPassword}>I forgot my password</span>
         </div>
         <div className="remember-me">
           <input

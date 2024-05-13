@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+import axios from "axios";
+import "./forgotPasswordInput.css";
+import email from "../Icons/email.svg";
+
+function ForgotPasswordInput() {
+  const [emailSent, setEmailSent] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/v1/users/forgotPassword",
+        data,
+        { withCredentials: true }
+      );
+      setEmailSent(true);
+    } catch (error) {
+      // Handle login error
+      console.error("Sending email error:", error);
+    }
+  };
+  return (
+    <div className="input-forgotPassword">
+      <form onSubmit={handleSubmit}>
+        <div className="input-box">
+          <input type="email" required className="email" name="email" />
+          <label className="email">Email </label>
+          <img src={email} alt="" className="email" />
+        </div>
+        <div className="sendLink">
+          <button className="btn-sendLink" type="submit">
+            Send the reset link
+          </button>
+        </div>
+        {emailSent &&<div className="Emailsent">An Email with password reset link has been sent!</div>}
+      </form>
+    </div>
+  );
+}
+
+export default ForgotPasswordInput;
