@@ -4,7 +4,7 @@ import NavBar from "./HomePageComponents/NavBar";
 import LogIn from "./LogIn";
 import SingIn from "./SingIn";
 import MyToursPage from "./MyToursPage";
-import AddNewTour from './AddNewTour';
+import AddNewTour from "./AddNewTour";
 
 function HomePage() {
   const [logIn, setLogIn] = useState(false);
@@ -80,10 +80,10 @@ function HomePage() {
         onAboutChange={handleAboutChange}
         onTutorialsChange={handleTutorialsChange}
       />
-      {logIn ? <LogIn /> : null}
+      {logIn ? <LogIn onHomeChange={handleHomeChange} /> : null}
       {sginUp ? <SingIn /> : null}
       {samples ? <MyToursPage /> : null}
-      {about ? <AddNewTour /> :null}
+      {about ? <AddNewTour /> : null}
     </div>
   );
 }

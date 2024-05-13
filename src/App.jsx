@@ -1,9 +1,6 @@
 import React from "react";
 import "./App.css";
 import { useState } from "react";
-
-import HomePage from "./components/HomePage";
-
 import "./App.css";
 import AddNewTour from "./components/AddNewTour";
 import LogIn from "./components/LogIn";
@@ -20,10 +17,8 @@ function App() {
         <HomePage
          
         />
-      <SignIn />
     </div>
   );
 }
 
-export default App;
 export default App;

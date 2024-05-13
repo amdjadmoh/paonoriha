@@ -6,8 +6,9 @@ import user from "../Icons/user.svg";
 import google from "../Icons/google.svg";
 import x from "../Icons/x.svg";
 
-function LogInInput() {
+function LogInInput({ onForgotPassword, onHomeChange }) {
   const [rememberMe, setRememberMe] = useState(false);
+  const [user, setUser] = useState(null);
 
   const handleRememberMeChange = () => {
     setRememberMe(!rememberMe);
@@ -25,18 +26,15 @@ function LogInInput() {
         data,
         { withCredentials: true }
       );
-
       // Handle successful login response
-      console.log("Login successful:", response.data);
+      console.log("Login successful:", response.data.data.user);
+      localStorage.setItem('user',  JSON.stringify(response.data.data.user))
+      window.location.reload()
     } catch (error) {
-      // Handle login error
       console.error("Login error:", error);
     }
   };
-  const handleForgotPassword=()=>{
-        
-  }
-  
+
   return (
     <div className="input-login">
       <form onSubmit={handleSubmit}>
@@ -55,7 +53,9 @@ function LogInInput() {
           />
           <label className="password-login">Password</label>
           <img src={password} alt="" className="password-login" />
-          <span className="password-login" onClick={handleForgotPassword}>I forgot my password</span>
+          <span className="password-login" onClick={onForgotPassword}>
+            I forgot my password
+          </span>
         </div>
         <div className="remember-me">
           <input

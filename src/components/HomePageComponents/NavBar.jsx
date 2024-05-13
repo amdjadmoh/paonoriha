@@ -1,7 +1,8 @@
 import React from "react";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import "./NavBar.css";
-import img from "../Icons/img.png";
+import logo from "../Icons/logo.svg";
+import axios from "axios";
 import Switch from "./Switch";
 function NavBar({
   logIn,
@@ -11,27 +12,52 @@ function NavBar({
   onSamplesChange,
   onHomeChange,
   onAboutChange,
-  onTutorialsChange
+  onTutorialsChange,
 }) {
-  onst[(isLoggedIn, setIsLoggedIn)] = useState(false);
-
+  const [user, setUser] = useState(false);
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(";").shift();
+    return null;
+  }
   useEffect(() => {
-    const checkAuthenticationStatus = async () => {
-      try {
-        const response = await axios.get("localhost:5000/api/v1/users/amIlogged");
-        if (response.data.status === "success") {
-          setIsLoggedIn(true);
-        }
-      } catch (error) {
-        setIsLoggedIn(false);
-      }
-    };
+    // this method checks with the server if the user is logged in
+    // const checkAuthenticationStatus = async () => {
+    //   const storedStatus = localStorage.getItem('isLoggedIn');
+    //   if (storedStatus) {
+    //     setIsLoggedIn(storedStatus === 'true');
+    //   } else {
+    //     try {
+    //       const response = await axios.get(
+    //         "http://localhost:5000/api/v1/users/amIlogged",
+    //         { withCredentials: true }
+    //       );
+    //       console.log(response.data.status);
+    //       if (response.data.status === "success") {
+    //         setIsLoggedIn(true);
+    //         localStorage.setItem('isLoggedIn', 'true');
+    //       }
+    //     } catch (error) {
+    //       setIsLoggedIn(false);
+    //       localStorage.setItem('isLoggedIn', 'false');
+    //     }
+    //   }
+    // };
 
-    checkAuthenticationStatus();
+    // checkAuthenticationStatus();
+
+    //this method just checks if a user exists in the local storage
+
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
   }, []);
-  return (
+  return user === false ? (
     <div className="navbar">
-      <img src={img} alt="Food Lover Logo" />
+      <img src={logo} alt="Logo" />
       <nav>
         <ul>
           <li onClick={onHomeChange}>Home</li>
@@ -41,13 +67,25 @@ function NavBar({
         </ul>
       </nav>
       <div className="switch">
-        {isLoggedIn?<Switch
+        <Switch
           logIn={logIn}
           sginUp={sginUp}
           onLogInChange={onLogInChange}
           onSignUpChange={onSignUpChange}
-        /> :null}
+        />
       </div>
+    </div>
+  ) : (
+    <div className="navbar">
+      <img src={logo} alt="Logo" />
+      <nav>
+        <ul>
+          <li onClick={onHomeChange}>Home</li>
+          <li onClick={onSamplesChange}>Samples</li>
+          <li onClick={onTutorialsChange}>Tutorials</li>
+          <li onClick={onAboutChange}>About</li>
+        </ul>
+      </nav>
     </div>
   );
 }
