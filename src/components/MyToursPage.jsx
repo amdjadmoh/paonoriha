@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./MyToursPage.css";
+// import "./MyToursPage.css";
 import trach from "./Icons/trach.svg";
 import edit from "./Icons/edit.svg";
 import clock from "./Icons/ClockHistory.svg";

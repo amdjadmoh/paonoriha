@@ -30,9 +30,9 @@ function ForgotPasswordInput({ onSuccess, onError }) {
     <div className="input-forgotPassword">
       <form onSubmit={handleSubmit}>
         <div className="input-box">
-          <input type="email" required className="email" name="email" />
-          <label className="email">Email </label>
-          <img src={email} alt="" className="email" />
+          <input type="email" required className="ForgotPasswordemail" name="email" />
+          <label className="ForgotPasswordemail">Email </label>
+          <img src={email} alt="" className="ForgotPasswordemail" />
         </div>
         <div className="sendLink">
           <button className="btn-sendLink" type="submit">

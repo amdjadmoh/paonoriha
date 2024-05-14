@@ -62,7 +62,6 @@ function NavBar({
       <nav>
         <ul className="navBarUL">
           <li className="navBarLI" onClick={onHomeChange}>Home</li>
-          <li className="navBarLI" onClick={onSamplesChange}>Samples</li>
           <li className="navBarLI" onClick={onTutorialsChange}>Tutorials</li>
           <li className="navBarLI" onClick={onAboutChange}>About</li>
         </ul>
@@ -82,11 +81,10 @@ function NavBar({
       <nav>
         <ul className="navBarUL">
           <li className="navBarLI" onClick={onHomeChange}>Home</li>
-          <li className="navBarLI" onClick={onSamplesChange}>Samples</li>
           <li className="navBarLI" onClick={onTutorialsChange}>Tutorials</li>
           <li className="navBarLI" onClick={onAboutChange}>About</li>
           <div className="NavBar-YourTours">
-            <MakeYourTours />
+            <MakeYourTours onMyToursChanges />
       </div>
         </ul>
       </nav>

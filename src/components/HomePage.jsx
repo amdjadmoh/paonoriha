@@ -12,6 +12,7 @@ function HomePage({ onError, onSuccess,onMyToursChange }) {
   const [home, setHome] = useState(false);
   const [about, setAbout] = useState(false);
   const [tutorials, setTutorials] = useState(false);
+  const [myTours, setMyTours] = useState(false);
   //to open LogIn
   const handleLogInChange = () => {
     setLogIn(!logIn);
@@ -52,6 +53,9 @@ function HomePage({ onError, onSuccess,onMyToursChange }) {
     setAbout(false);
     setTutorials(!tutorials);
   };
+  const handleMyToursChange = () => {
+    setMyTours(!myTours);
+    }
 
   return (
     <div className="home-container">
@@ -63,11 +67,10 @@ function HomePage({ onError, onSuccess,onMyToursChange }) {
         onHomeChange={handleHomeChange}
         onAboutChange={handleAboutChange}
         onTutorialsChange={handleTutorialsChange}
-        onMyToursChanges={onMyToursChange}
+        onMyToursChanges={handleMyToursChange}
       />
       {logIn ? <LogIn onError={onError} onSuccess={onSuccess} /> : null}
       {sginUp ? <SingIn onError={onError} onSuccess={onSuccess} /> : null}
-      {samples ? <MyToursPage onError={onError} onSuccess={onSuccess} /> : null}
       {about ? <AddNewTour onError={onError} onSuccess={onSuccess}/> :null}
     </div>
   );
