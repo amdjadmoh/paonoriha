@@ -7,6 +7,14 @@ import ResetPassword from "./components/ResetPassword";
 import ErrorMessage from "./components/ErrorMassege";
 import SuccessMessage from "./components/SuccessMessage";
 
+import MyToursPage from "./components/MyToursPage";
+import NewInfoPoint from "./components/AddnewTourComponents/NewInfoPoint";
+import NewHotspot from "./components/AddnewTourComponents/NewHotspot";
+import LeftSide from "./components/AddnewTourComponents/LeftSide";
+import Rightside from "./components/AddnewTourComponents/RightSide";
+import AddNewTour from "./components/AddNewTour";
+import EditTextCoordinates from "./components/AddnewTourComponents/EditTextCoordinates";
+import EditDestinationCoordinates from "./components/AddnewTourComponents/EditDestinationCoordinates";
 function App() {
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,6 +29,10 @@ function App() {
   const handleSuccess = (message) => {
     setSuccess(true);
     setSuccessMessage(message);
+  };
+  const [openMyTours, setOpenMytours] = useState(false);
+  const handleMyToursChange = () => {
+    setOpenMytours(!openMyTours);
   };
   return (
     <Router>
@@ -39,6 +51,14 @@ function App() {
         />
       </Routes>
     </Router>
+    <div>
+      <EditDestinationCoordinates />
+      {/* {!openMyTours ? (
+        <HomePage onMyToursChange={handleMyToursChange} />
+      ) : (
+        MyToursPage
+      )} */}
+    </div>
   );
 }
 

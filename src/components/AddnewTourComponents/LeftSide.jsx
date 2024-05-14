@@ -1,64 +1,63 @@
-import React from 'react'
+import React from "react";
 import "./LeftSide.css";
-import EditTextCoordinates from'./EditTextCoordinates'
-import { useState } from 'react';
+import EditTextCoordinates from "./EditTextCoordinates";
+import { useState } from "react";
 import Info from "../Icons/Info.svg";
 import Save from "../Icons/Save.svg";
 import Type from "../Icons/Type.svg";
 import camera from "../Icons/camera-360.svg";
-import close from '../Icons/close.svg';
+import close from "../Icons/close.svg";
+import img from '../Icons/img.png'
 function LeftSide() {
+  const [txtEdit, ssetTxtEdit] = useState(false); //EditTextCoordinates components
 
-   const [txtEdit, ssetTxtEdit] = useState(false); //EditTextCoordinates components
-
-   const openTxtEdit = () => {
-     ssetTxtEdit(!txtEdit);
-   };
-   
+  const openTxtEdit = () => {
+    ssetTxtEdit(!txtEdit);
+  };
 
   return (
     <div className="left-side">
       <button
-        className={`close-btn ${txtEdit ? "" : "close"}`}
+        className={`close-btn-left-side ${txtEdit ? "" : "close"}`}
         onClick={openTxtEdit}
       >
-        <img src={close} alt="" />
+        <img src={close} alt="close-icon" />
       </button>
       <div className={`EditTextCoordinates ${txtEdit ? "" : "close"}`}>
         <EditTextCoordinates />
       </div>
-      <div className={`head-buttons ${!txtEdit ? "" : "close"}`}>
-        <div className={`buttons ${!txtEdit ? "" : "close"}`}>
-          <div className="icons">
-            <img src={camera} className="camera" />
+      <div className={`head-buttons-left-side ${!txtEdit ? "" : "close"}`}>
+        <div className={`buttons-left-side ${!txtEdit ? "" : "close"}`}>
+          <div className="icons-left-side">
+            <img src={camera} className="camera-left-side" alt="camera-icon" />
           </div>
-          <span>New Hotspot</span>
+          <span className="headbutton-span">New Hotspot</span>
         </div>
         <div
-          className={`buttons ${!txtEdit ? "" : "close"}`}
+          className={`buttons-left-side ${!txtEdit ? "" : "close"}`}
           onClick={openTxtEdit}
         >
-          <div className="icons">
-            <img src={Type} className="type" />
+          <div className="icons-left-side">
+            <img src={Type} className="type-left-side" alt="txt-icon" />
           </div>
-          <span>New Text</span>
+          <span className="headbutton-span">New Text</span>
         </div>
-        <div className={`buttons ${!txtEdit ? "" : "close"}`}>
-          <div className="icons">
-            <img src={Info} className="info" />
+        <div className={`buttons-left-side ${!txtEdit ? "" : "close"}`}>
+          <div className="icons-left-side">
+            <img src={Info} className="info-left-side" alt="info-icon" />
           </div>
-          <span>New Info</span>
+          <span className="headbutton-span">New Info</span>
         </div>
       </div>
-      <div className="view"></div>
-      <div className="save-button">
-        <button>
-          <img src={Save} alt="" />
-          Save
-        </button>
+      <div className="left-side-view">
+        <img src={img} alt="img" className="left-side-img-view" />
       </div>
+      <button className="save-button-left-side">
+        <img src={Save} alt="save-icon" className="save-button-img-left-side" />
+        Save
+      </button>
     </div>
   );
 }
 
-export default LeftSide
+export default LeftSide;

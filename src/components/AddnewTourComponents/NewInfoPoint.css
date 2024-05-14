@@ -1,0 +1,129 @@
+.newinfopoint {
+  display: inline-block;
+}
+
+.infooint-form {
+  border-radius: 10px;
+  background: #e8effa;
+  width: 578px;
+  height: 421px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+
+/* button edit */
+.infopoint.cancel,
+.infopoint.submit {
+  display: flex;
+  width: 103px;
+  height: 33px;
+  padding: 7px 14px 7px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-family: "Hind Siliguri";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.infopoint-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 22px;
+  margin-bottom: 13px;
+}
+
+.infopoint.cancel {
+  background: #a2a6b6;
+}
+
+.infopoint.cancel:hover {
+  background: hsl(228, 12%, 57%);
+}
+
+.infopoint.submit {
+  background: #69d3c2;
+}
+
+.infopoint.submit:hover {
+  background: hsl(170, 55%, 42%);
+}
+
+.infopoint.cancel:hover,
+.infopoint.submit:hover {
+  transform: scale(1.08);
+  letter-spacing: 0.3px;
+}
+
+/* the input edit */
+.sebjet-field,
+.title-field {
+  border-radius: 10px;
+  background: #d0d3e0;
+  border: 2px solid transparent;
+  outline: none;
+  padding: 0 10px;
+  font-family: "Hind Siliguri";
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  color: hsl(0, 0%, 40%);
+}
+
+.sebjet-field::placeholder,
+.title-field::placeholder {
+  color: #707070;
+  font-family: "Hind Siliguri";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+
+.sebjet-field {
+  resize: none;
+  padding: 10px 10px;
+}
+
+.sebjet-field:focus,
+.title-field:focus {
+  border: 2px solid white;
+}
+
+.title-field {
+  margin-top: 41px;
+  height: 67px;
+  width: 473px;
+}
+
+.sebjet-field {
+  height: 163px;
+  margin-top: 22px;
+}
+
+/* title edit */
+.infopoint-title {
+  margin-top: 21px;
+  color: #11bacd;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.28px;
+}

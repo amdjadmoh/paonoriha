@@ -30,13 +30,13 @@ const decrementSize = (setter) => {
   return (
     <div className="edit-text-container">
       <div className="location-delete">
-        <button className="delete-btn">
-          <span>Delete</span>
-          <img src={trach} alt="Trash" />
+        <button className="delete-btn-edit-txt">
+          <span className="span-location-delete">Delete</span>
+          <img src={trach} alt="Trash" className="delete-btn-edit-txt-icon" />
         </button>
-        <button className="Destination-btn">
-          <span>Add New Text</span>
-          <img src={add} alt="Add" />
+        <button className="Destination-btn-edit-txt">
+          <span className="span-location-delete">Add New Text</span>
+          <img src={add} alt="Add" className="Destination-btn-edit-txt-icon" />
         </button>
       </div>
       <div className="edit-text-buttons">
@@ -45,32 +45,50 @@ const decrementSize = (setter) => {
           <div className="coordinate">
             <div className="x-coordinate">
               <span className="coor-span">X-coordinate:</span>
-              <button onClick={() => incrementCoordinate(setXCoordinate)}>
-                <img src={add} alt="" />
+              <button
+                className="coor-btn"
+                onClick={() => incrementCoordinate(setXCoordinate)}
+              >
+                <img src={add} alt="add-icon" className="coor-img" />
               </button>
               <span className="counter">{xCoordinate}</span>
-              <button onClick={() => decrementCoordinate(setXCoordinate)}>
-                <img src={minus} alt="" />
+              <button
+                className="coor-btn"
+                onClick={() => decrementCoordinate(setXCoordinate)}
+              >
+                <img src={minus} alt="minus-icon" className="coor-img" />
               </button>
             </div>
             <div className="y-coordinate">
               <span className="coor-span">Y-coordinate:</span>
-              <button onClick={() => incrementCoordinate(setYCoordinate)}>
-                <img src={add} alt="" />
+              <button
+                className="coor-btn"
+                onClick={() => incrementCoordinate(setYCoordinate)}
+              >
+                <img src={add} alt="add-icon" className="coor-img" />
               </button>
               <span className="counter">{yCoordinate}</span>
-              <button onClick={() => decrementCoordinate(setYCoordinate)}>
-                <img src={minus} alt="" />
+              <button
+                className="coor-btn"
+                onClick={() => decrementCoordinate(setYCoordinate)}
+              >
+                <img src={minus} alt="minus-icon" className="coor-img" />
               </button>
             </div>
             <div className="z-coordinate">
               <span className="coor-span">Z-coordinate:</span>
-              <button onClick={() => incrementCoordinate(setZCoordinate)}>
-                <img src={add} alt="" />
+              <button
+                className="coor-btn"
+                onClick={() => incrementCoordinate(setZCoordinate)}
+              >
+                <img src={add} alt="add-icon" className="coor-img" />
               </button>
               <span className="counter">{zCoordinate}</span>
-              <button onClick={() => decrementCoordinate(setZCoordinate)}>
-                <img src={minus} alt="" />
+              <button
+                className="coor-btn"
+                onClick={() => decrementCoordinate(setZCoordinate)}
+              >
+                <img src={minus} alt="minus-icon" className="coor-img" />
               </button>
             </div>
           </div>
@@ -79,12 +97,12 @@ const decrementSize = (setter) => {
       <div className="width-edit">
         <span className="Size">Size:</span>
         <div className="txt-width">
-          <button onClick={() => incrementSize(setSize)}>
-            <img src={add} alt="Increment Size" />
+          <button className="coor-btn" onClick={() => incrementSize(setSize)}>
+            <img src={add} alt="Increment Size" className="coor-img" />
           </button>
           <span className="counter">{size}</span>
-          <button onClick={() => decrementSize(setSize)}>
-            <img src={minus} alt="Decrement Size" />
+          <button className="coor-btn" onClick={() => decrementSize(setSize)}>
+            <img src={minus} alt="Decrement Size" className="coor-img" />
           </button>
         </div>
       </div>

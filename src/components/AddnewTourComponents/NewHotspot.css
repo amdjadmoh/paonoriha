@@ -1,0 +1,146 @@
+.newhotspot {
+  width: 578px;
+  height: 416px;
+  border-radius: 10px;
+  background: #e8effa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* title edit */
+.hotspotTitle {
+  color: #11bacd;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.28px;
+  margin-top: 21px;
+}
+
+/* button edit */
+.hotspot-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 22px;
+  margin-bottom: 13px;
+}
+
+.hotspot-button.cancel,
+.hotspot-button.submit {
+  display: flex;
+  width: 103px;
+  height: 33px;
+  padding: 7px 14px 7px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-family: "Hind Siliguri";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.hotspot-button.cancel {
+  background: #a2a6b6;
+}
+
+.hotspot-button.cancel:hover {
+  background: hsl(228, 12%, 57%);
+}
+
+.hotspot-button.submit {
+  background: #69d3c2;
+}
+
+.hotspot-button.submit:hover {
+  background: hsl(170, 55%, 42%);
+}
+
+.hotspot-button.cancel:hover,
+.hotspot-button.submit:hover {
+  transform: scale(1.08);
+  letter-spacing: 0.3px;
+}
+
+/* the hotspot edit */
+.yourHotspot {
+  width: 432px;
+  height: 259px;
+  margin-top: 21px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  column-gap: 25px;
+  row-gap: 21px;
+}
+
+.hotspoyimgviwe {
+  display: flex;
+  width: 204px;
+  height: 119px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 9px;
+  overflow: hidden;
+  position: relative;
+  transition: .4s ease;
+  cursor: pointer;
+}
+
+.hotspoyimgviwe:hover{
+transform: scale(1.1);
+}
+
+.hotspoyimgviwe::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    #fff -13.4%,
+    #d4d4d4 48.97%,
+    #9d9d9d 65.98%,
+    #000 100%
+  );
+}
+
+.hotspotimgtilt {
+  z-index: 100;
+  width: 195px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-family: "Hind Siliguri";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+}
+
+.hotspotimg {
+  width: 100%;
+  height: 100%;
+}

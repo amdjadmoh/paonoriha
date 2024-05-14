@@ -4,8 +4,26 @@
     padding: 0 100px;
     position: relative;
 }
+
+/* open and close textedit button */
+.close-btn-left-side{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    margin-left: 980px;
+    margin-top: 5px;
+    z-index: 10;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.close-btn-left-side{
+opacity: 0;
+}
+
 /* head buttons */
-.left-side .head-buttons{
+.head-buttons-left-side{
     display: inline-block;
     border-radius: 50px;
     height: 54px;
@@ -15,12 +33,14 @@
     transition: .4s ease;
     overflow: hidden;
 }
-.left-side .head-buttons.close{
+
+.head-buttons-left-side.close{
    opacity: 0;
    width: 0;
    border:3px transparent ;
 }
-.left-side .head-buttons .buttons{
+
+.buttons-left-side{
     display: inline-block;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -36,10 +56,12 @@
     transition: .7s ease;
     overflow: hidden;
 }
-.left-side .head-buttons .buttons:hover{
+
+.buttons-left-side:hover{
     width: 140px;
 }
-.left-side .head-buttons .buttons .icons{
+
+.icons-left-side{
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -48,21 +70,26 @@
     line-height: 60px;
     text-align: center;
 }
-.left-side .head-buttons .buttons:nth-child(1):hover .icons,
-.head-buttons .buttons:nth-child(2):hover .icons,
-.head-buttons .buttons:nth-child(3):hover .icons{
+
+.buttons-left-side:nth-child(1):hover .icons-left-side,
+.buttons-left-side:nth-child(2):hover .icons-left-side,
+.buttons-left-side:nth-child(3):hover .icons-left-side{
     background-color: hsl(228, 72%, 54%);
 }
-.left-side .head-buttons .buttons .icons .camera{
+
+.camera-left-side{
     width: 30px;
 }
-.left-side .head-buttons .buttons .icons .type{
+
+.type-left-side{
     width: 28px;
 }
-.left-side .head-buttons .buttons .icons .info{
+
+.info-left-side{
     width: 32px;
 }
-.left-side .head-buttons .buttons span{
+
+.headbutton-span{
     font-size: 12px;
     color: white;
     margin-left: 10px;
@@ -70,8 +97,9 @@
     position: relative;
     bottom: 10px;
 }
+
 /* view */
-.view{
+.left-side-view{
     background-color: #e8effa;
     width: 100%;
     height: 500px;
@@ -79,8 +107,14 @@
     border-radius: 20px;
     overflow: hidden;
 }
+
+.left-side-img-view{
+    width: 100%;
+    height: 100%;
+}
+
 /* save button */
-.save-button button{
+.save-button-left-side{
     background-color: #69c9ca;
     border: none;
     width: 100px;
@@ -99,33 +133,23 @@
     transition: .7s ease;
     cursor: pointer;
 }
-.save-button button img{
+
+.save-button-img-left-side{
     width: 30px;
 }
-.save-button button:hover{
+
+.save-button-left-side:hover{
     transform: scale(1.1);
     background-color: hsl(181, 48%, 50%);
     letter-spacing: .8px;
 }
+
+/* text corrdensate */
 .EditTextCoordinates{
     position: absolute;
     transition: .5s ease;
 }
+
 .EditTextCoordinates.close{
     opacity: 0;
-}
-.close-btn{
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    margin-left: 980px;
-    margin-top: 5px;
-    z-index: 10;
-    cursor: pointer;
-    transition: .5s ease;
-}
-.close-btn.close{
-opacity: 0;
 }

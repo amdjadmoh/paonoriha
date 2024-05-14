@@ -10,10 +10,10 @@ function NavBar({
   sginUp,
   onLogInChange,
   onSignUpChange,
-  onSamplesChange,
   onHomeChange,
   onAboutChange,
   onTutorialsChange,
+  onMyToursChanges
 }) {
   const [user, setUser] = useState(false);
   function getCookie(name) {

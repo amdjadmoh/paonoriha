@@ -6,10 +6,9 @@ import SingIn from "./SingIn";
 import MyToursPage from "./MyToursPage";
 import AddNewTour from './AddNewTour';
 
-function HomePage({ onError, onSuccess }) {
+function HomePage({ onError, onSuccess,onMyToursChange }) {
   const [logIn, setLogIn] = useState(false);
   const [sginUp, setSginUp] = useState(false);
-  const [samples, setSamples] = useState(false);
   const [home, setHome] = useState(false);
   const [about, setAbout] = useState(false);
   const [tutorials, setTutorials] = useState(false);
@@ -17,7 +16,6 @@ function HomePage({ onError, onSuccess }) {
   const handleLogInChange = () => {
     setLogIn(!logIn);
     setSginUp(false);
-    setSamples(false);
     setHome(false);
     setAbout(false);
     setTutorials(false);
@@ -26,16 +24,6 @@ function HomePage({ onError, onSuccess }) {
   const handleSignUpChange = () => {
     setLogIn(false);
     setSginUp(!sginUp);
-    setSamples(false);
-    setHome(false);
-    setAbout(false);
-    setTutorials(false);
-  };
-  //to open Samples
-  const handleSamplesChange = () => {
-    setLogIn(false);
-    setSginUp(false);
-    setSamples(!samples);
     setHome(false);
     setAbout(false);
     setTutorials(false);
@@ -44,7 +32,6 @@ function HomePage({ onError, onSuccess }) {
   const handleHomeChange = () => {
     setLogIn(false);
     setSginUp(false);
-    setSamples(false);
     setHome(!home);
     setAbout(false);
     setTutorials(false);
@@ -53,7 +40,6 @@ function HomePage({ onError, onSuccess }) {
   const handleAboutChange = () => {
     setLogIn(false);
     setSginUp(false);
-    setSamples(false);
     setHome(false);
     setAbout(!about);
     setTutorials(false);
@@ -62,7 +48,6 @@ function HomePage({ onError, onSuccess }) {
   const handleTutorialsChange = () => {
     setLogIn(false);
     setSginUp(false);
-    setSamples(false);
     setHome(false);
     setAbout(false);
     setTutorials(!tutorials);
@@ -75,10 +60,10 @@ function HomePage({ onError, onSuccess }) {
         sginUp={sginUp}
         onLogInChange={handleLogInChange}
         onSignUpChange={handleSignUpChange}
-        onSamplesChange={handleSamplesChange}
         onHomeChange={handleHomeChange}
         onAboutChange={handleAboutChange}
         onTutorialsChange={handleTutorialsChange}
+        onMyToursChanges={onMyToursChange}
       />
       {logIn ? <LogIn onError={onError} onSuccess={onSuccess} /> : null}
       {sginUp ? <SingIn onError={onError} onSuccess={onSuccess} /> : null}
