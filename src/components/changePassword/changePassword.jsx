@@ -14,7 +14,7 @@ function ChangePassword() {
     const data = Object.fromEntries(formData);
 
     try {
-      const response = await axios.post(
+      const response = await axios.patch(
         `http://localhost:5000/api/v1/users/resetPassword/${resetToken}`,
         data,
         { withCredentials: true }

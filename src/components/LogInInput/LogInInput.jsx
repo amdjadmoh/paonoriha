@@ -37,19 +37,9 @@ function LogInInput({ onForgotPassword, onHomeChange }) {
         { withCredentials: true }
       );
       // Handle successful login response
-<<<<<<< HEAD
       console.log("Login successful:", response.data.data.user);
       localStorage.setItem('user',  JSON.stringify(response.data.data.user))
       window.location.reload()
-=======
-      console.log("Login successful:", response.data);
-
-      // If Remember Me is checked, save token to local storage or cookies
-      if (rememberMe) {
-        localStorage.setItem("rememberToken", response.data.token);
-        // You can also set an expiry for the token or use cookies with appropriate settings
-      }
->>>>>>> 25aacf335563cb06fc0e71c10b29b5c427c2e5e0
     } catch (error) {
       console.error("Login error:", error);
     }

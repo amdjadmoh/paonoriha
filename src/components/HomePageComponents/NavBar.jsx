@@ -4,6 +4,7 @@ import "./NavBar.css";
 import logo from "../Icons/logo.svg";
 import axios from "axios";
 import Switch from "./Switch";
+import MakeYourTours from "./MakeYourTours";
 function NavBar({
   logIn,
   sginUp,
@@ -14,7 +15,6 @@ function NavBar({
   onAboutChange,
   onTutorialsChange,
 }) {
-<<<<<<< HEAD
   const [user, setUser] = useState(false);
   function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -57,18 +57,14 @@ function NavBar({
     }
   }, []);
   return user === false ? (
-=======
-
-  return (
->>>>>>> 25aacf335563cb06fc0e71c10b29b5c427c2e5e0
     <div className="navbar">
       <img src={logo} alt="Logo" />
       <nav>
-        <ul>
-          <li onClick={onHomeChange}>Home</li>
-          <li onClick={onSamplesChange}>Samples</li>
-          <li onClick={onTutorialsChange}>Tutorials</li>
-          <li onClick={onAboutChange}>About</li>
+        <ul className="navBarUL">
+          <li className="navBarLI" onClick={onHomeChange}>Home</li>
+          <li className="navBarLI" onClick={onSamplesChange}>Samples</li>
+          <li className="navBarLI" onClick={onTutorialsChange}>Tutorials</li>
+          <li className="navBarLI" onClick={onAboutChange}>About</li>
         </ul>
       </nav>
       <div className="switch">
@@ -84,11 +80,14 @@ function NavBar({
     <div className="navbar">
       <img src={logo} alt="Logo" />
       <nav>
-        <ul>
-          <li onClick={onHomeChange}>Home</li>
-          <li onClick={onSamplesChange}>Samples</li>
-          <li onClick={onTutorialsChange}>Tutorials</li>
-          <li onClick={onAboutChange}>About</li>
+        <ul className="navBarUL">
+          <li className="navBarLI" onClick={onHomeChange}>Home</li>
+          <li className="navBarLI" onClick={onSamplesChange}>Samples</li>
+          <li className="navBarLI" onClick={onTutorialsChange}>Tutorials</li>
+          <li className="navBarLI" onClick={onAboutChange}>About</li>
+          <div className="NavBar-YourTours">
+            <MakeYourTours />
+      </div>
         </ul>
       </nav>
     </div>

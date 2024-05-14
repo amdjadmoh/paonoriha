@@ -1,24 +1,18 @@
 import React from "react";
 import "./App.css";
-import { useState } from "react";
-import "./App.css";
-import AddNewTour from "./components/AddNewTour";
-import LogIn from "./components/LogIn";
-import LogInInput from "./components/LogInInput/LogInInput";
-import SignIn from "./components/SingIn";
 import HomePage from "./components/HomePage";
-<<<<<<< HEAD
-import ForgotPasswordInput from "./components/forgotPasswordInput/forgotPasswordInput";
-import ChangePassword from "./components/changePassword/changePassword";
-=======
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MakeYourTours from "./components/HomePageComponents/MakeYourTours";
+import ResetPassword from './components/ResetPassword';
 
->>>>>>> 25aacf335563cb06fc0e71c10b29b5c427c2e5e0
 function App() {
   return (
-    <div>
-      <MakeYourTours />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/resetPassword/:resetToken" element={<ResetPassword />} />
+      </Routes>
+    </Router>
   );
 }
 
