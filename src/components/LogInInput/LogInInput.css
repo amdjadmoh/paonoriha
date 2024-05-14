@@ -39,7 +39,7 @@
     transition: 0.8s ease;
 }
 
-input.user-login{
+input.loginEmail{
     bottom: 20px;
     border: 2px solid #859cf699;
 }
@@ -59,11 +59,11 @@ input.password-login{
     justify-content: center;
 }
 
-label.user-login{
+label.loginEmail{
     width: 120px;
     height: 30px;
     bottom: 28.5px;
-    left: 45.5px;
+    left: 4.5px;
     transition: 0.3s ease;
 }
 
@@ -83,7 +83,7 @@ label.password-login{
     width: 25px;
 }
 
-img.user-login{
+img.loginEmail{
 bottom: 33px;
 left: 15px;
 }
@@ -93,7 +93,7 @@ img.password-login{
     left: 15px;
 }
 
-input.user-login:focus{
+input.loginEmail:focus{
     border: 2px solid rgba(255, 255, 255, 0.702);
 }
 
@@ -104,17 +104,17 @@ input.password-login:focus{
 
 input.password-login:focus ~label.password-login,
 input.password-login:valid ~label.password-login{
-    transform: translate(-40px,-30px) scale(.8);
+    transform: translate(-40px,-34px) scale(.9);
 }
 
-.input.user-login:focus ~label.user-login ,
-input.user-login:valid ~label.user-login{
-    transform: translate(-77px,-30px) scale(.8);
+.input.loginEmail:focus ~label.loginEmail ,
+input.loginEmail:valid ~label.loginEmail{
+    transform: translate(-38px,-34px) scale(.9);
 }
 
 span.password-login{
     position: absolute;
-    font-size: 10px;
+    font-size: 12px;
     width: 120px;
     top: 16px;
     left: 200px;
@@ -123,7 +123,7 @@ span.password-login{
     justify-content: center;
     height: 15px;
     z-index: 1000;
-    color: hsla(0, 0%, 100%, 0.796);
+    color: hsla(0, 0%, 4%, 0.796);
     cursor: pointer;
 }
 

@@ -45,7 +45,7 @@ input.user{
     border: 2px solid #859cf699;
 }
 
-input.email{
+input.SignupEmail{
     bottom: 5px;
 }
 
@@ -74,7 +74,7 @@ label.user{
     transition: 0.3s ease;
 }
 
-label.email{
+label.SignupEmail{
 height: 15px;
 bottom: 20px;
 left: 45px;
@@ -110,7 +110,7 @@ bottom: 82px;
 left: 15px;
 }
 
-img.email{
+img.SignupEmail{
     bottom: 17px;
     left: 10px;
 }
@@ -140,8 +140,8 @@ input.user:valid ~label.user
 }
 input.password:focus ~label.password,
 input.password:valid ~label.password,
-input.email:focus~label.email,
-input.email:valid~label.email,
+input.SignupEmail:focus~label.SignupEmail,
+input.SignupEmail:valid~label.SignupEmail,
 input.conferm:focus ~label.conferm ,
 input.conferm:valid ~label.conferm{
     transform: translate(-40px,-31px) scale(.89);
@@ -160,8 +160,8 @@ input.user:focus ~img.user ,
 input.user:valid ~img.user,
 input.password:focus ~img.password,
 input.password:valid ~img.password,
-input.email:focus~img.email,
-input.email:valid~img.email{
+input.SignupEmail:focus~img.SignupEmail,
+input.SignupEmail:valid~img.SignupEmail{
 z-index: 100000;
 }
 

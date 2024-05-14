@@ -6,7 +6,7 @@ import email from "../Icons/email.svg";
 import x from "../Icons/x.svg";
 import google from "../Icons/google.svg";
 import axios from "axios";
-function SingInInputs() {
+function SingInInputs({onError}) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -23,6 +23,7 @@ function SingInInputs() {
     } catch (error) {
       // Handle login error
       console.error("Login error:", error);
+      onError(error.response.data.message)
     }
   };
   return (
@@ -37,9 +38,9 @@ function SingInInputs() {
           <img src={user} alt="" className="user" />
         </div>
         <div className="input-box">
-          <input type="email" required className="email" name="email" />
-          <label className="email">Email</label>
-          <img src={email} alt="" className="email" />
+          <input type="email" required className="SignupEmail" name="email" />
+          <label className="SignupEmail">Email</label>
+          <img src={email} alt="" className="SignupEmail" />
         </div>
         <div className="input-box">
           <input

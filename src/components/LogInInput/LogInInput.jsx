@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./LogInInput.css";
-import password from "../Icons/password.svg";
-import user from "../Icons/user.svg";
+import passwordicon from "../Icons/password.svg";
+import usericon from "../Icons/user.svg";
 import google from "../Icons/google.svg";
 import x from "../Icons/x.svg";
 
-function LogInInput({ onForgotPassword, onHomeChange }) {
+function LogInInput({ onForgotPassword, onHomeChange , onError}) {
   const [rememberMe, setRememberMe] = useState(false);
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    // Check if there's a remember token in local storage or cookies
-    const rememberToken = localStorage.getItem("rememberToken");
-    if (rememberToken) {
-      // Perform automatic login using the token
-      // You might want to make a request to your backend here
-      console.log("Automatic login with remember token:", rememberToken);
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Check if there's a remember token in local storage or cookies
+  //   const rememberToken = localStorage.getItem("rememberToken");
+  //   if (rememberToken) {
+  //     // Perform automatic login using the token
+  //     // You might want to make a request to your backend here
+  //     console.log("Automatic login with remember token:", rememberToken);
+  //   }
+  // }, []);
 
   const handleRememberMeChange = () => {
     setRememberMe(!rememberMe);
@@ -41,7 +41,8 @@ function LogInInput({ onForgotPassword, onHomeChange }) {
       localStorage.setItem('user',  JSON.stringify(response.data.data.user))
       window.location.reload()
     } catch (error) {
-      console.error("Login error:", error);
+      onError(error.response.data.message);
+
     }
   };
 
@@ -50,9 +51,9 @@ function LogInInput({ onForgotPassword, onHomeChange }) {
       <form onSubmit={handleSubmit}>
         <h1 className="login-title">Login</h1>
         <div className="input-box">
-          <input type="email" required className="user-login" name="email" />
-          <label className="user-login">Email </label>
-          <img src={user} alt="" className="user-login" />
+          <input type="email" required className="loginEmail" name="email" />
+          <label className="loginEmail">Email </label>
+          <img src={usericon} alt="" className="loginEmail" />
         </div>
         <div className="input-box">
           <input
@@ -62,7 +63,7 @@ function LogInInput({ onForgotPassword, onHomeChange }) {
             name="password"
           />
           <label className="password-login">Password</label>
-          <img src={password} alt="" className="password-login" />
+          <img src={passwordicon} alt="" className="password-login" />
           <span className="password-login" onClick={onForgotPassword}>
             I forgot my password
           </span>

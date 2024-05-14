@@ -6,7 +6,7 @@ import SingIn from "./SingIn";
 import MyToursPage from "./MyToursPage";
 import AddNewTour from './AddNewTour';
 
-function HomePage() {
+function HomePage({ onError, onSuccess }) {
   const [logIn, setLogIn] = useState(false);
   const [sginUp, setSginUp] = useState(false);
   const [samples, setSamples] = useState(false);
@@ -80,10 +80,10 @@ function HomePage() {
         onAboutChange={handleAboutChange}
         onTutorialsChange={handleTutorialsChange}
       />
-      {logIn ? <LogIn /> : null}
-      {sginUp ? <SingIn /> : null}
-      {samples ? <MyToursPage /> : null}
-      {about ? <AddNewTour /> :null}
+      {logIn ? <LogIn onError={onError} onSuccess={onSuccess} /> : null}
+      {sginUp ? <SingIn onError={onError} onSuccess={onSuccess} /> : null}
+      {samples ? <MyToursPage onError={onError} onSuccess={onSuccess} /> : null}
+      {about ? <AddNewTour onError={onError} onSuccess={onSuccess}/> :null}
     </div>
   );
 }

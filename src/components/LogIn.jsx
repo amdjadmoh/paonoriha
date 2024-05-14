@@ -3,7 +3,7 @@ import "./LogIn.css";
 import LogInInput from "./LogInInput/LogInInput";
 import ForgotPasswordInput from "./forgotPasswordInput/forgotPasswordInput";
 
-function LogIn({ onHomeChange }) {
+function LogIn({ onError, onHomeChange, onSuccess }) {
   // Initialize the state for the checkbox
   const [forgotPassword, setForgotPassword] = useState(false);
 
@@ -14,9 +14,13 @@ function LogIn({ onHomeChange }) {
   return (
     <div className="login-form">
       {!forgotPassword ? (
-        <LogInInput onForgotPassword={handleForgotPassword} onHomeChange={onHomeChange} />
+        <LogInInput
+          onForgotPassword={handleForgotPassword}
+          onHomeChange={onHomeChange}
+          onError={onError}
+        />
       ) : (
-        <ForgotPasswordInput />
+        <ForgotPasswordInput onError={onError} onSuccess={onSuccess} />
       )}
     </div>
   );

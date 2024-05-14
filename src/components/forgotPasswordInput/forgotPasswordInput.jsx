@@ -3,7 +3,7 @@ import axios from "axios";
 import "./forgotPasswordInput.css";
 import email from "../Icons/email.svg";
 
-function ForgotPasswordInput() {
+function ForgotPasswordInput({ onSuccess, onError }) {
   const [emailSent, setEmailSent] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -19,9 +19,11 @@ function ForgotPasswordInput() {
         { withCredentials: true }
       );
       setEmailSent(true);
+      onSuccess("An Email with password reset link has been sent!");
     } catch (error) {
       // Handle login error
       console.error("Sending email error:", error);
+      onError(error.response.data.message);
     }
   };
   return (
@@ -37,7 +39,6 @@ function ForgotPasswordInput() {
             Send the reset link
           </button>
         </div>
-        {emailSent &&<div className="Emailsent">An Email with password reset link has been sent!</div>}
       </form>
     </div>
   );
