@@ -1,13 +1,16 @@
-.SuccessMessage {
-    left: -270px;
-    bottom: 30px;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    transition: 0.7s ease;
+.successmessage {
+  left: 50px;
+  bottom: 30px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transition: opacity 0.7s ease-in-out;
+  } */
+  .successmessage.appear {
+    opacity: 1;
   }
-  .SuccessMessage.appear {
-    transform: translateX(303px);
+  .successmessage.disappear {
+    opacity: 0;
   }
   .success {
     background-color: hsl(120, 72%, 60%);
@@ -20,10 +23,12 @@
     border-radius: 10px;
     gap: 5px;
   }
-  .successmessage.success {
+  .successmessageIcon {
     width: 50px;
+    position: absolute;
+    left: 10px;
   }
-  .successmessage.cancel {
+  .successmessageCancelIcon {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -39,4 +44,6 @@
     font-size: 15px;
     color: white;
     letter-spacing: 0px;
+    left: 70px;
+    bottom: 20px;
   }

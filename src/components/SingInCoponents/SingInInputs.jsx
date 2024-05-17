@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./SingInInputs.css";
 import passwordicon from "../Icons/password.svg";
 import user from "../Icons/user.svg";
-import email from "../Icons/email.svg";
+import emailicon from "../Icons/email.svg";
 import x from "../Icons/x.svg";
 import google from "../Icons/google.svg";
 import axios from "axios";
-function SingInInputs({onError}) {
+function SingInInputs({ onError }) {
+  const [email, setEmail] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -14,16 +15,20 @@ function SingInInputs({onError}) {
     const data = Object.fromEntries(formData);
 
     try {
-      const response =await axios.post("http://localhost:5000/api/v1/users/signup", data, {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/v1/users/signup",
+        data,
+        {
+          withCredentials: true,
+        }
+      );
 
       // Handle successful login response
       console.log("Login successful:", response.data);
     } catch (error) {
       // Handle login error
       console.error("Login error:", error);
-      onError(error.response.data.message)
+      onError(error.response.data.message);
     }
   };
   return (
@@ -32,35 +37,41 @@ function SingInInputs({onError}) {
         <div className="singin-title">
           <h1 className="sginup">Sign Up</h1>
         </div>
-        <div className="input-box">
-          <input type="text" required className="user" name="name" />
-          <label className="user">Full name</label>
-          <img src={user} alt="" className="user" />
+        <div className="input-box-signup">
+          <input type="text" required className="SignUpUser" name="name" />
+          <label className="SignUpUser">Full name</label>
+          <img src={user} alt="" className="SignUpUser" />
         </div>
-        <div className="input-box">
-          <input type="email" required className="SignupEmail" name="email" />
-          <label className="SignupEmail">Email</label>
-          <img src={email} alt="" className="SignupEmail" />
+        <div className="input-box-signup">
+          <input
+            type="email"
+            required
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+            className={`SignupEmail ${email ? "SignUpEmail-has-value" : ""}`}
+          />
+      <label className={`SignupEmail ${email ? 'SignUpEmail-has-value' : ''}`}>Email</label>
+          <img src={emailicon} alt="" className="SignupEmail" />
         </div>
-        <div className="input-box">
+        <div className="input-box-signup">
           <input
             type="password"
             required
-            className="password"
+            className="SignUpPassword"
             name="password"
           />
-          <label className="password">Password</label>
-          <img src={passwordicon} alt="" className="password" />
+          <label className="SignUpPassword">Password</label>
+          <img src={passwordicon} alt="" className="SignUpPassword" />
         </div>
-        <div className="input-box">
+        <div className="input-box-signup">
           <input
             type="password"
             required
-            className="conferm"
+            className="SignUpPasswordconfirm"
             name="passwordConfirm"
           />
-          <label className="conferm">Conferm the password</label>
-          <img src={passwordicon} alt="" className="conferm" />
+          <label className="SignUpPasswordconfirm">Confirm the password</label>
+          <img src={passwordicon} alt="" className="SignUpPasswordconfirm" />
         </div>
         <button className="btn-singin" type="submit">
           Sign up

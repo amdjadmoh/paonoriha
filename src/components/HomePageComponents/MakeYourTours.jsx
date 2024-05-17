@@ -5,7 +5,7 @@ import cat from "../Icons/cat.svg";
 import exit from "../Icons/exit.svg";
 import axios from "axios";
 
-function MakeYourTours() {
+function MakeYourTours({ onMyToursChanges }) {
   const [isHovered, setIsHovered] = useState(false);
   const handelLogOut = async () => {
     try {
@@ -20,6 +20,9 @@ function MakeYourTours() {
       console.error("Logout error:", error);
     }
   };
+  const goToMyTours = () => {
+    window.location.href = "/myTours";
+  }
   return (
     <div className="MakeYourTours">
       <div className="user-edit-info">
@@ -44,8 +47,9 @@ function MakeYourTours() {
         </div>
       </div>
       <div className="go-to-your-tour">
-        <button>Your Tours</button>
-      </div>
+      <button onClick={goToMyTours} className="gotoyourtourbtn">
+          Your Tours
+        </button>      </div>
     </div>
   );
 }

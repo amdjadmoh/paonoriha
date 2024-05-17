@@ -108,7 +108,7 @@ input.password-login:valid ~label.password-login{
 }
 
 .input.loginEmail:focus ~label.loginEmail ,
-input.loginEmail:valid ~label.loginEmail{
+input.loginEmail-has-value ~label.loginEmail-has-value{
     transform: translate(-38px,-34px) scale(.9);
 }
 

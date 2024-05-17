@@ -6,6 +6,8 @@ import MakeYourTours from "./components/HomePageComponents/MakeYourTours";
 import ResetPassword from "./components/ResetPassword";
 import ErrorMessage from "./components/ErrorMassege";
 import SuccessMessage from "./components/SuccessMessage";
+import MyToursPage from "./components/MyToursPage";
+import EditTour from "./components/AddNewTour";
 function App() {
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -26,8 +28,12 @@ function App() {
   };
   return (
     <Router>
-      {hasError && <ErrorMessage message={errorMessage} />}
-      {success && <SuccessMessage message={successMessage} />}
+      {hasError && (
+        <ErrorMessage message={errorMessage} setHasError={setHasError} />
+      )}
+      {success && (
+        <SuccessMessage message={successMessage} setSuccess={setSuccess} />
+      )}
       <Routes>
         <Route
           path="/"
@@ -39,7 +45,16 @@ function App() {
             <ResetPassword onError={handleError} onSuccess={handleSuccess} />
           }
         />
-      </Routes>
+        <Route
+          path="/myTours"
+          element={<MyToursPage  />}
+        />
+        <Route
+        path="/edit/:tourID"
+        element={<EditTour onError={handleError} onSuccess={handleSuccess} />
+        }
+        /> 
+        </Routes>
     </Router>
   );
 }

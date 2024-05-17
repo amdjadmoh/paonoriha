@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./forgotPasswordInput.css";
-import email from "../Icons/email.svg";
+import emailicon from "../Icons/email.svg";
 
 function ForgotPasswordInput({ onSuccess, onError }) {
   const [emailSent, setEmailSent] = useState(false);
+  const [email, setEmail] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,10 +30,16 @@ function ForgotPasswordInput({ onSuccess, onError }) {
   return (
     <div className="input-forgotPassword">
       <form onSubmit={handleSubmit}>
-        <div className="input-box">
-          <input type="email" required className="ForgotPasswordemail" name="email" />
-          <label className="ForgotPasswordemail">Email </label>
-          <img src={email} alt="" className="ForgotPasswordemail" />
+        <div className="forgotPassword-box">
+          <input
+            type="email"
+            required
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+            className={`ForgotPasswordemail ${email ? "ForgotPasswordemail-has-value" : ""}`}
+          />
+      <label className={`ForgotPasswordemail ${email ? 'ForgotPasswordemail-has-value' : ''}`}>Email</label>
+          <img src={emailicon} alt="" className="ForgotPasswordemail" />
         </div>
         <div className="sendLink">
           <button className="btn-sendLink" type="submit">

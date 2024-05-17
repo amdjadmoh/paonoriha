@@ -1,27 +1,24 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
 
 .navbar{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 400px;
-    position: relative;
+    gap: 500px;
 }
 
-.navbar nav .navBarUL{
+.navBarUL{
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-transform: capitalize;
-    margin-right: 300px;
+    margin-right: 200px;
 }
- .navBarLI {
+
+.navBarLI{
     padding:15px 20px ;
-    color: #4e5983;
+    color: hsl(0, 0%, 40%);
     font-weight: 600;
     cursor: pointer;
 }
@@ -32,18 +29,14 @@
 
 .switch{
     position: absolute;
-    right: 80px;
+    right: 150px;
 }
 
 .navBarLI.home{
     color: #5169dd;
 }
-.navbar img{
 
-}
 .NavBar-YourTours{
     position: absolute;
-    right: 200px;
-    width: 350px;
-    right: 50px;
+    right: 150px;
 }

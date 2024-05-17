@@ -15,48 +15,46 @@ function NavBar({
   onTutorialsChange,
   onMyToursChanges
 }) {
-  const [user, setUser] = useState(false);
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
-    return null;
-  }
+  // const [user, setUser] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+
   useEffect(() => {
     // this method checks with the server if the user is logged in
-    // const checkAuthenticationStatus = async () => {
-    //   const storedStatus = localStorage.getItem('isLoggedIn');
-    //   if (storedStatus) {
-    //     setIsLoggedIn(storedStatus === 'true');
-    //   } else {
-    //     try {
-    //       const response = await axios.get(
-    //         "http://localhost:5000/api/v1/users/amIlogged",
-    //         { withCredentials: true }
-    //       );
-    //       console.log(response.data.status);
-    //       if (response.data.status === "success") {
-    //         setIsLoggedIn(true);
-    //         localStorage.setItem('isLoggedIn', 'true');
-    //       }
-    //     } catch (error) {
-    //       setIsLoggedIn(false);
-    //       localStorage.setItem('isLoggedIn', 'false');
-    //     }
-    //   }
-    // };
+    const checkAuthenticationStatus = async () => {
+        try {
+          const response = await axios.get(
+            "http://localhost:5000/api/v1/users/amIlogged",
+            { withCredentials: true }
+          );
+          if (response.data.status === "success") {
+            setIsLoggedIn(true);
+            setIsLoading(false);
 
-    // checkAuthenticationStatus();
+          }
+        } catch (error) {
+          setIsLoggedIn(false);
+          setIsLoading(false);
+
+      }
+    };
+
+    checkAuthenticationStatus();
+    
 
     //this method just checks if a user exists in the local storage
 
-    const loggedInUser = localStorage.getItem("user");
-    if (loggedInUser) {
-      const foundUser = JSON.parse(loggedInUser);
-      setUser(foundUser);
-    }
+    // const loggedInUser = localStorage.getItem("user");
+    // if (loggedInUser) {
+    //   const foundUser = JSON.parse(loggedInUser);
+    //   setUser(foundUser);
+    // }
   }, []);
-  return user === false ? (
+  if (isLoading) {
+    return null; // Don't render anything while loading
+  }
+  return isLoggedIn === false ? (
     <div className="navbar">
       <img src={logo} alt="Logo" />
       <nav>
@@ -80,7 +78,7 @@ function NavBar({
       <img src={logo} alt="Logo" />
       <nav>
         <ul className="navBarUL">
-          <li className="navBarLI" onClick={onHomeChange}>Home</li>
+          <li className="navBarLI home" onClick={onHomeChange}>Home</li>
           <li className="navBarLI" onClick={onTutorialsChange}>Tutorials</li>
           <li className="navBarLI" onClick={onAboutChange}>About</li>
           <div className="NavBar-YourTours">

@@ -6,7 +6,7 @@ import SingIn from "./SingIn";
 import MyToursPage from "./MyToursPage";
 import AddNewTour from './AddNewTour';
 
-function HomePage({ onError, onSuccess,onMyToursChange }) {
+function HomePage({ onError, onSuccess ,onMyToursChange }) {
   const [logIn, setLogIn] = useState(false);
   const [sginUp, setSginUp] = useState(false);
   const [home, setHome] = useState(false);
@@ -71,7 +71,7 @@ function HomePage({ onError, onSuccess,onMyToursChange }) {
       />
       {logIn ? <LogIn onError={onError} onSuccess={onSuccess} /> : null}
       {sginUp ? <SingIn onError={onError} onSuccess={onSuccess} /> : null}
-      {about ? <AddNewTour onError={onError} onSuccess={onSuccess}/> :null}
+      {/* {about ? <AddNewTour onError={onError} onSuccess={onSuccess}/> :null} */}
     </div>
   );
 }

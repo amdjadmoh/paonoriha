@@ -40,7 +40,7 @@
     border: 2px solid #859cf699;
 }
 
-input.user{
+input.SignUpUser{
     bottom: 70px;
     border: 2px solid #859cf699;
 }
@@ -49,15 +49,15 @@ input.SignupEmail{
     bottom: 5px;
 }
 
-input.password{
+input.SignUpPassword{
     top: 12px;
 }
 
-input.conferm{
+input.SignUpPasswordconfirm{
     top: 75px;
 }
 
-.input-singin .input-box label{
+.input-singin .input-box-signup label{
     position: absolute;
     color: rgba(255, 255, 255, 0.702);
     z-index: 2;
@@ -66,7 +66,7 @@ input.conferm{
     justify-content: center;
 }
 
-label.user{
+label.SignUpUser{
     width: 120px;
     height: 30px;
     bottom: 78.5px;
@@ -81,14 +81,14 @@ left: 45px;
 transition: 0.3s ease;
 }
 
-label.password{
+label.SignUpPassword{
     height: 30px;
     top: 21px;
     left: 46.5px;
     transition: 0.3s ease;
 }
 
-label.conferm{
+label.SignUpPasswordconfirm{
     width: 180px;
     transition: 0.3s ease;
     height: 15px;
@@ -96,7 +96,7 @@ label.conferm{
     left: 40px;
 }
 
-.input-singin .input-box{
+.input-singin .input-box-signup{
     position: relative;
 }
 
@@ -105,7 +105,7 @@ label.conferm{
     width: 25px;
 }
 
-img.user{
+img.SignUpUser{
 bottom: 82px;
 left: 15px;
 }
@@ -115,12 +115,12 @@ img.SignupEmail{
     left: 10px;
 }
 
-img.password{
+img.SignUpPassword{
     top: 22px;
     left: 15px;
 }
 
-img.conferm{
+img.SignUpPasswordconfirm{
     top: 85px;
     left: 15px;
 }
@@ -129,21 +129,21 @@ input:focus{
     border: 2px solid rgba(255, 255, 255, 0.702);
 }
 
-input.password:focus{
+input.SignUpPassword:focus{
     border: 2px solid hsl(51, 100%, 94%);
 }
 
-input.user:focus ~label.user ,
-input.user:valid ~label.user
+input.SignUpUser:focus ~label.SignUpUser ,
+input.SignUpUser:valid ~label.SignUpUser
 {
     transform: translate(-40px,-30px) scale(.89);
 }
-input.password:focus ~label.password,
-input.password:valid ~label.password,
+input.SignUpPassword:focus ~label.SignUpPassword,
+input.SignUpPassword:valid ~label.SignUpPassword,
 input.SignupEmail:focus~label.SignupEmail,
-input.SignupEmail:valid~label.SignupEmail,
-input.conferm:focus ~label.conferm ,
-input.conferm:valid ~label.conferm{
+input.SignUpEmail-has-value~label.SignupEmail,
+input.SignUpPasswordconfirm:focus ~label.SignUpPasswordconfirm ,
+input.SignUpPasswordconfirm:valid ~label.SignUpPasswordconfirm{
     transform: translate(-40px,-31px) scale(.89);
 }
 
@@ -156,10 +156,10 @@ input[type="password"] {
     filter: invert(100%); /* Invert the icon color to white */
 }
 
-input.user:focus ~img.user ,
-input.user:valid ~img.user,
-input.password:focus ~img.password,
-input.password:valid ~img.password,
+input.SignUpUser:focus ~img.SignUpUser ,
+input.SignUpUser:valid ~img.SignUpUser,
+input.SignUpPassword:focus ~img.SignUpPassword,
+input.SignUpPassword:valid ~img.SignUpPassword,
 input.SignupEmail:focus~img.SignupEmail,
 input.SignupEmail:valid~img.SignupEmail{
 z-index: 100000;

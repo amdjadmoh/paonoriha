@@ -6,9 +6,10 @@ import usericon from "../Icons/user.svg";
 import google from "../Icons/google.svg";
 import x from "../Icons/x.svg";
 
-function LogInInput({ onForgotPassword, onHomeChange , onError}) {
+function LogInInput({ onForgotPassword, onHomeChange, onError }) {
   const [rememberMe, setRememberMe] = useState(false);
   const [user, setUser] = useState(null);
+  const [email, setEmail] = useState("");
 
   // useEffect(() => {
   //   // Check if there's a remember token in local storage or cookies
@@ -38,11 +39,10 @@ function LogInInput({ onForgotPassword, onHomeChange , onError}) {
       );
       // Handle successful login response
       console.log("Login successful:", response.data.data.user);
-      localStorage.setItem('user',  JSON.stringify(response.data.data.user))
-      window.location.reload()
+      localStorage.setItem("user", JSON.stringify(response.data.data.user));
+      window.location.reload();
     } catch (error) {
       onError(error.response.data.message);
-
     }
   };
 
@@ -51,8 +51,14 @@ function LogInInput({ onForgotPassword, onHomeChange , onError}) {
       <form onSubmit={handleSubmit}>
         <h1 className="login-title">Login</h1>
         <div className="input-box">
-          <input type="email" required className="loginEmail" name="email" />
-          <label className="loginEmail">Email </label>
+          <input
+            type="email"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+            className={`loginEmail ${email ? "loginEmail-has-value" : ""}`}
+            name="email"
+          />
+      <label className={`loginEmail ${email ? 'loginEmail-has-value' : ''}`}>Email</label>
           <img src={usericon} alt="" className="loginEmail" />
         </div>
         <div className="input-box">
@@ -65,7 +71,7 @@ function LogInInput({ onForgotPassword, onHomeChange , onError}) {
           <label className="password-login">Password</label>
           <img src={passwordicon} alt="" className="password-login" />
           <span className="password-login" onClick={onForgotPassword}>
-            I forgot my password
+             Forgot password
           </span>
         </div>
         <div className="remember-me">

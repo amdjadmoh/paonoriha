@@ -1,12 +1,13 @@
-import React from "react";
+import {React,useState} from "react";
 import "./AddNewTour.css";
-import RightSide from './AddnewTourComponents/RightSide';
-import LeftSide from './AddnewTourComponents/LeftSide';
+import RightSide from './AdminComponents/RightSide';
+import LeftSide from './AdminComponents/LeftSide';
 function AddNewTour() {
+  const [currentScene, setCurrentScene] = useState(null);
   return (
     <div className="container">
-      <RightSide />
-      <LeftSide />
+     <RightSide currentScene={currentScene} setCurrentScene={setCurrentScene} />
+<LeftSide currentScene={currentScene} setCurrentScene={setCurrentScene} />
     </div>
   );
 }

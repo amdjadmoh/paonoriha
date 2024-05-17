@@ -1,0 +1,167 @@
+* {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.06px;
+}
+
+.span-location-delete {
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.Destination-btn-edit-txt,
+.delete-btn-edit-txt,
+.location-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Size {
+  color: #000;
+}
+
+.location-delete,
+.edit-text-buttons,
+.width-edit,
+.add-new-text {
+  margin: 0 15px;
+  margin-top: 10px;
+}
+
+.location-delete {
+  gap: 10px;
+}
+
+.edit-text-container {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+
+.delete-btn-edit-txt {
+  background: #fd3535;
+  transition: ease;
+}
+
+.Destination-btn-edit-txt {
+  background: #617be5;
+}
+
+.coordinate-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-text-buttons{
+  display: flex;
+  gap: 20px;
+}
+
+.width-edit {
+  display: flex;
+}
+
+.coordinate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.coor-btn {
+  width: 20px;
+  height: 20px;
+  background: #617be5;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.x-coordinate,
+.y-coordinate,
+.z-coordinate,
+.width-edit,
+.txt-width {
+  display: flex;
+  gap: 15px;
+}
+
+.coor-span {
+  width: 100px;
+  height: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: black;
+}
+
+.coor-img {
+  width: 12px;
+}
+
+.Destination-btn-edit-txt,
+.delete-btn-edit-txt {
+  display: flex;
+  height: 45px;
+  padding: 0px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.Destination-btn-edit-txt-icon,
+.delete-btn-edit-txt-icon {
+  width: 20px;
+}
+
+/* input edit */
+.add-new-text {
+  position: relative;
+}
+
+.add-new-text .txt-content {
+  background-color: transparent;
+  transition: 0.8s ease;
+  border: 2px solid #617be5;
+  outline: none;
+  border-radius: 10px;
+  width: 170px;
+  height: 30px;
+  padding: 5px;
+  transition: 0.1s ease;
+}
+
+.add-new-text .txt-content:focus {
+  color: hsl(228, 72%, 64%);
+  border: 2px solid hsl(228, 72%, 74%);
+}
+
+.Destination-btn-edit-txt:hover {
+  background-color: hsl(228, 72%, 54%);
+}
+
+.delete-btn-edit-txt:hover {
+  background-color: hsl(0, 98%, 70%);
+}
+
+.Destination-btn-edit-txt:hover,
+.delete-btn-edit-txt:hover {
+  transform: scale(1.08);
+}
